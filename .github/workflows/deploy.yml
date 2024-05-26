@@ -35,7 +35,7 @@ jobs:
       - name: setup coi-serviceworker for workaround
         working-directory: build/web
         run: |
-          curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.min.js > coi-serviceworker.min.js
+          wget -O coi-serviceworker.min.js https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.min.js
           sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.min.js"></script>\n\1#g' index.html
 
       - name: Upload artifact
